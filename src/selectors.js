@@ -4,3 +4,6 @@ export const container = document.querySelector(".container");
 export const nameDiv = document.querySelector(".name");
 export const country = document.querySelector(".country");
 export const imageOfWeather = document.querySelector(".imageOfWeather")
+export const temp = document.querySelector(".temperature")
+export const time = document.querySelector(".time")
+export const text = document.querySelector(".weather-description")

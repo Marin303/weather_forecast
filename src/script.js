@@ -1,12 +1,5 @@
 import { removeLastChild } from "./remove.js";
-import {
-  button,
-  input,
-  container,
-  nameDiv,
-  country,
-  imageOfWeather,
-} from "./selectors.js";
+import {button,input,container,nameDiv,country,imageOfWeather,temp,time,text} from "./selectors.js";
 
 button.addEventListener("click", myFunction);
 
@@ -24,15 +17,17 @@ function myFunction() {
   )
     .then((response) => response.json())
     .then((data) => {
-      nameDiv.textContent = data.location.name;
-      country.textContent = data.location.country;
+      nameDiv.textContent = `City: ${data.location.name}`;
+      country.textContent = `Country: ${data.location.country}`;
+      time.textContent = `Current local time: ${data.location.localtime}`;
+      temp.textContent = `Temperature: ${data.current.temp_c} °C`;
+      text.textContent = `Today's condition: ${data.current.condition.text}`
       imageOfWeather.src = `${data.current.condition.icon}`;
 
       removeLastChild(container);
 
-      container.appendChild(nameDiv);
-      nameDiv.appendChild(country);
-      container.appendChild(imageOfWeather);
+      const objects = [nameDiv, country, time,temp,  imageOfWeather, text];
+      container.append(...objects);
 
       input.value = "";
       return data;
