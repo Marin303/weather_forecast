@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather forecast</title>
+</head>
+<style>
+    body {
+        background-image: url("../images/weather.jpg");
+    }
+
+    .container {
+        border: 1px solid red;
+        width: 30em;
+        height: 30em;
+        margin: 150px auto;
+        text-align: center;
+    }
+    
+    .inputAndButton {
+        margin: 5em;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Weather forecast</h1>
+        <div class="inputAndButton">
+            <input type="text" placeholder="enter country/city name:" list="suggest">
+            <button>Search</button>
+            <datalist id="suggest">
+                <option value="Paris"></option>
+                <option value="London"></option>
+                <option value="Zagreb"></option>
+            </datalist>
+        </div>
+
+        <div class="name"></div>
+        <div class="country"></div>
+        <img class="imageOfWeather"></img>
+
+    </div>
+    <p>source: <a href="https://www.weatherapi.com/docs/">https://www.weatherapi.com/docs/</a></p>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
