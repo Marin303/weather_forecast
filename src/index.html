@@ -13,15 +13,43 @@
     }
 
     .container {
-        border: 1px solid red;
+        /* border: 1px solid red; */
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 10px;
         width: 30em;
         height: 30em;
         margin: 150px auto;
         text-align: center;
+        overflow: hidden;
     }
-    
+
+    h1 {
+        margin: 0;
+        background-image: linear-gradient(60deg, #070ff4, #f90a0a);
+        color: white;
+    }
+
+    button {
+        display: block;
+        margin: 5px auto;
+        cursor: pointer;
+        width: 177px;
+    }
+
     .inputAndButton {
-        margin: 5em;
+        margin: 4em auto 2em;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .parent {
+        display: flex;
+        align-items: center;
+    }
+    .temperature{
+        line-height: 5;
     }
 </style>
 
@@ -31,17 +59,15 @@
         <div class="inputAndButton">
             <input type="text" placeholder="enter country/city name:" list="suggest">
             <button>Search</button>
-            <datalist id="suggest">
-                <option value="Paris"></option>
-                <option value="London"></option>
-                <option value="Zagreb"></option>
-            </datalist>
         </div>
-
-        <div class="name"></div>
-        <div class="country"></div>
-        <img class="imageOfWeather"></img>
-
+        
+            <div class="name"></div>
+            <div class="country"></div>
+            <div class="temperature"></div>
+            <div class="time"></div>
+            <div class="weather-description"></div>
+            <img class="imageOfWeather"></img>
+       
     </div>
     <p>source: <a href="https://www.weatherapi.com/docs/">https://www.weatherapi.com/docs/</a></p>
     <script src="script.js" type="module"></script>
