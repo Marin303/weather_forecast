@@ -10,6 +10,12 @@ import {
 
 button.addEventListener("click", myFunction);
 
+input.addEventListener("keydown", (a) => {
+  if (a.key === "Enter") {
+    return myFunction(a);
+  }
+});
+
 function myFunction() {
   const inputValue = input.value;
 
@@ -35,10 +41,3 @@ function myFunction() {
       console.error("Error:", error);
     });
 }
-input.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    input.value = "";
-    return myFunction();
-  }
-});
-
